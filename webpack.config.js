@@ -11,11 +11,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.styl(us)?$/,
+        test: /\.scss$/,
         use: [
           'vue-style-loader',
           'css-loader',
-          'stylus-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              indentedSyntax: true
+            }
+          }
         ]
       },
       {
